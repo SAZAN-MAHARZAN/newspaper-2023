@@ -1,0 +1,18 @@
+{% extends "news_admin/base.html" %}
+
+{% block content %}
+<form action="" method="post" class="m-2">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-contrtol" name="username" id="">
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-contrtol" name="password" id="">
+    </div>
+    <button type="submit" class="btn btn-success">Login</button>
+    
+{% endblock content %}
+</form>

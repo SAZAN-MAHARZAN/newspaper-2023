@@ -1,0 +1,26 @@
+{% extends ""news_admin/base.html"" %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <div class="post">
+            <div class="mt-2">
+                <a href="{% url 'news_admin:draft-publish' post.pk %}" class="btn btn-success">Publish</a>
+            </div>
+            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" srcset="" height="420px" width="860" class="mt-2 mb-2">
+            <h1>
+                <a href="">{{ post.title }}/"></a>
+            </h1>
+            <div class="mt-2 my-2">
+                <a href="{% url 'news_admin:post-update' post.pk %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'news_admin:post-delete' post.pk %}" class="btn btn-danger">Delete</a>
+            </div>
+            <div class="date author">@{{ post.author.username }}</div>
+            <p>
+                {{ post.content }}
+            </p>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
